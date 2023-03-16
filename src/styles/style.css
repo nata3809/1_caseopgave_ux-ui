@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgba(253, 246, 236, 1);
+}
+
+img {
+  max-width: 100%;
+}
+
+/*Teskster*/
+h1 {
+  font-family: "Imbue", serif;
+  font-size: 5rem;
+  color: black;
+}
+
+h2 {
+  font-family: "Imbue", serif;
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: "Imbue", serif;
+  font-size: 4rem;
+  font-weight: bold;
+}
+h4 {
+  font-family: "Gidugu", sans-serif;
+  font-size: 2rem;
+}
+
+p {
+  font-family: "Gidugu", sans-serif;
+  font-size: 1rem;
+}
+
+li a {
+  font-family: "Gidugu", sans-serif;
+}
