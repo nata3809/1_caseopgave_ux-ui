@@ -2,7 +2,9 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import Menu from "../components/Menu.astro";
+import Container from "../components/Container.astro";
 import "../styles/style.css";
+import { Debug } from "astro/components";
 
 const url = "https://nwjbtvzqimludxhozddx.supabase.co/rest/v1/sakura";
 const options = {
@@ -13,24 +15,28 @@ const options = {
 
 const response = await fetch(url, options);
 const alleEvents = await response.json();
+
+const mainStage = alleEvents.filter((festivalevent) => festivalevent.scene === 1);
+const secondStage = alleEvents.filter((festivalevent) => festivalevent.scene === 2);
+const lawnStage = alleEvents.filter((festivalevent) => festivalevent.scene === 3);
+const dato1 = alleEvents.filter((festivalevent) => festivalevent.dato === 1);
+const dato2 = alleEvents.filter((festivalevent) => festivalevent.dato === 2);
+
+// console.log("MAIN STAGE ", mainStage);
 ---
 
-<main>
-  <Menu />
+<MainLayout>
+  <main>
+    <!-- {alleEvents.map((event) => <Card festivalevent={event} />)} -->
+  </main>
 
-  <section>
-    <div class="overskrift1">
-      <h1>Line up</h1>
-    </div>
-  </section>
+  <main>
+    <Container alleEvents={mainStage} filter="Main Stage" />
+    <Container alleEvents={secondStage} filter="Second Stage" />
+    <Container alleEvents={lawnStage} filter="On the lawn" />
+  </main>
+</MainLayout>
 
-  <article class="listeview">
-    <Card img="../img/wadaiko.jpg" title="hej" />
-    <Card img="../img/wadaiko.jpg" title="hej" />
-    <Card img="../img/wadaiko.jpg" title="hej" />
-    <Card img="../img/wadaiko.jpg" title="hej" />
-  </article>
-</main>
 <style>
   .listeview {
     display: grid;

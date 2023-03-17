@@ -1,11 +1,14 @@
 ---
-const { festivalevent } = Astro.props;
+export interface Props {}
+
+const { img, title, time } = Astro.props;
 ---
 
 <article>
-  <img src={"/img/" + festivalevent.image} />
-  <h4>{festivalevent.event}</h4>
-  <p>{festivalevent.time}</p>
+  <img src={img} />
+  <h4>{title}</h4>
+  <p>{time}</p>
+  <slot />
 </article>
 
 <style>
