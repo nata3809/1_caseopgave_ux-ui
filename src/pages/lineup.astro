@@ -1,0 +1,41 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+import Menu from "../components/Menu.astro";
+import "../styles/style.css";
+---
+
+<main>
+  <Menu />
+
+  <section>
+    <div class="overskrift1">
+      <h1>Line up</h1>
+    </div>
+  </section>
+
+  <article class="listeview">
+    <Card img="../img/wadaiko.jpg" title="hej" />
+    <Card img="../img/wadaiko.jpg" title="hej" />
+    <Card img="../img/wadaiko.jpg" title="hej" />
+    <Card img="../img/wadaiko.jpg" title="hej" />
+  </article>
+</main>
+<style>
+  .listeview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1px;
+    justify-content: center;
+  }
+
+  .overskrift1 {
+    text-align: center;
+  }
+
+  main {
+    position: fixed;
+    background-image: url("paf");
+    z-index: 10;
+  }
+</style>
