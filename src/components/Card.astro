@@ -1,12 +1,11 @@
 ---
-const { festivalevent, time } = Astro.props;
+const { festivalevent } = Astro.props;
 ---
 
 <article>
-  <!-- <img src={img} /> -->
+  <img src={"/img/" + festivalevent.image} />
   <h4>{festivalevent.event}</h4>
   <p>{festivalevent.time}</p>
-
 </article>
 
 <style>

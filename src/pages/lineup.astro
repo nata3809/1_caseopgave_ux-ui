@@ -21,11 +21,13 @@ const secondStage = alleEvents.filter((festivalevent) => festivalevent.scene ===
 const lawnStage = alleEvents.filter((festivalevent) => festivalevent.scene === 3);
 const dato1 = alleEvents.filter((festivalevent) => festivalevent.dato === 1);
 const dato2 = alleEvents.filter((festivalevent) => festivalevent.dato === 2);
+
+// console.log("MAIN STAGE ", mainStage);
 ---
 
 <MainLayout>
   <main>
-    {alleEvents.map((event) => <Card festivalevent={event} />)}
+    <!-- {alleEvents.map((event) => <Card festivalevent={event} />)} -->
   </main>
 
   <main>
@@ -33,7 +35,6 @@ const dato2 = alleEvents.filter((festivalevent) => festivalevent.dato === 2);
     <Container alleEvents={secondStage} filter="Second Stage" />
     <Container alleEvents={lawnStage} filter="On the lawn" />
   </main>
-  
 </MainLayout>
 
 <style>
