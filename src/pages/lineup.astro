@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import Menu from "../components/Menu.astro";
 import "../styles/style.css";
+import { Debug } from "astro/components";
 
 const url = "https://nwjbtvzqimludxhozddx.supabase.co/rest/v1/sakura";
 const options = {
@@ -30,7 +31,9 @@ const alleEvents = await response.json();
     <Card img="../img/wadaiko.jpg" title="hej" />
     <Card img="../img/wadaiko.jpg" title="hej" />
   </article>
+  <Debug {alleEvents} />
 </main>
+
 <style>
   .listeview {
     display: grid;
