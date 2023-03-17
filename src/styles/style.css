@@ -5,14 +5,17 @@
 body {
   background: rgba(253, 246, 236, 1);
 }
-
-img {
-  max-width: 100%;
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 130ch;
+  padding: 1rem;
+  line-height: 1.5;
 }
 
 /*Teskster*/
 h1 {
-  font-family: "Imbue", serif;
+  font-family: "Rubik Iso", cursive;
   font-size: 5rem;
   color: black;
 }
@@ -30,7 +33,7 @@ h3 {
 }
 h4 {
   font-family: "Gidugu", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 p {

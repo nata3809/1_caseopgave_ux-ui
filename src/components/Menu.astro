@@ -1,5 +1,6 @@
 ---
-const { title } = Astro.props;
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <nav>
@@ -11,24 +12,20 @@ const { title } = Astro.props;
 
   <ul>
     <li>
-      <a href="/pages.about.astro"> About</a>
+      <a href="/about/"> About</a>
     </li>
 
     <li>
-      <a href="/pages.lineup.astro"> Line-up</a>
+      <a href="/lineup/"> Lineup</a>
     </li>
-
-    <li><a href="/pages.singleview">My-Program</a></li>
+    <li>
+      <a href="/myprogram/"> My program</a>
+    </li>
   </ul>
 </nav>
 
 <style>
   nav {
-    display: inline;
-    width: 15rem;
-    padding: var(--space-lg);
-    background: var(--surface-black);
-    font-size: var(--font-size-small);
     font-weight: 600;
     text-align: right;
   }
