@@ -3,6 +3,16 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import Menu from "../components/Menu.astro";
 import "../styles/style.css";
+
+const url = "https://nwjbtvzqimludxhozddx.supabase.co/rest/v1/sakura";
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53amJ0dnpxaW1sdWR4aG96ZGR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg5NTY1NjMsImV4cCI6MTk5NDUzMjU2M30.pBu6ZWcKE_Krw71zy6wwDpQdA5iwxQsjAruQOKbdIlw",
+  },
+};
+
+const response = await fetch(url, options);
+const alleEvents = await response.json();
 ---
 
 <main>
@@ -31,11 +41,5 @@ import "../styles/style.css";
 
   .overskrift1 {
     text-align: center;
-  }
-
-  main {
-    position: fixed;
-    background-image: url("paf");
-    z-index: 10;
   }
 </style>
