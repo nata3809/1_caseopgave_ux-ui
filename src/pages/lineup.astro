@@ -16,42 +16,48 @@ const options = {
 const response = await fetch(url, options);
 const alleEvents = await response.json();
 
-const mainStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.scene === 1 &&festivalevent.dato ===1);
-const mainStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 1 &&festivalevent.dato ===2);
-const secondStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.scene === 2 &&festivalevent.dato ===1);
-const secondStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 2 &&festivalevent.dato ===2);
-const lawnStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.scene === 3 &&festivalevent.dato ===1);
-const lawnStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 3 &&festivalevent.dato ===2);
+const mainStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.scene === 1 && festivalevent.dato === 1);
+const mainStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 1 && festivalevent.dato === 2);
+const secondStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.scene === 2 && festivalevent.dato === 1);
+const secondStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 2 && festivalevent.dato === 2);
+const lawnStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.scene === 3 && festivalevent.dato === 1);
+const lawnStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 3 && festivalevent.dato === 2);
 
-
-// console.log("MAIN STAGE ", mainStage);
 ---
 
 <MainLayout>
-  <main>
     <!-- {alleEvents.map((event) => <Card festivalevent={event} />)} -->
-  </main>
 
   <main>
-    <Container theEvents={mainStageLoerdag} filter="Main Stage" />
-    <Container theEvents={secondStageLoerdag} filter="Second Stage" />
-    <Container theEvents={lawnStageLoerdag} filter="Lawn Stage" />
+    <div>
+      <h3>Main stage</h3>
+      <div class="main_loerdag">
+        <Container theEvents={mainStageLoerdag} />
+      </div>
+
+      <div>
+        <Container theEvents={secondStageLoerdag} filter="Second Stage" />
+      </div>
+
+      <div>
+        <Container theEvents={lawnStageLoerdag} filter="Lawn Stage" />
+      </div>
+    </div>
+
     <Container theEvents={mainStageSondag} filter="Main Stage" />
     <Container theEvents={secondStageSondag} filter="Second Stage" />
     <Container theEvents={lawnStageSondag} filter="Lawn Stage" />
-
   </main>
 </MainLayout>
 
 <style>
-  .listeview {
+  .main_loerdag {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1px;
-    justify-content: center;
   }
 
-  .overskrift1 {
+  h3 {
+    position: relative;
     text-align: center;
   }
 </style>

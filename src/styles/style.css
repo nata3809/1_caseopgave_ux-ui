@@ -3,7 +3,7 @@
 }
 
 body {
-  background: rgba(253, 246, 236, 1);
+  background: rgb(245, 234, 219);
 }
 body {
   margin: 0 auto;
@@ -12,6 +12,7 @@ body {
   padding: 1rem;
   line-height: 1.5;
 }
+
 
 /*Teskster*/
 h1 {
@@ -29,7 +30,6 @@ h2 {
 h3 {
   font-family: "Imbue", serif;
   font-size: 4rem;
-  font-weight: bold;
 }
 h4 {
   font-family: "Gidugu", sans-serif;
@@ -43,4 +43,5 @@ p {
 
 li a {
   font-family: "Gidugu", sans-serif;
+  font-size: 1.5rem;
 }

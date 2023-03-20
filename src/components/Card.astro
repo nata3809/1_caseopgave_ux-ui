@@ -4,20 +4,19 @@ const { festivalevent } = Astro.props;
 
 <article>
   <img src={"/img/" + festivalevent.image} />
-  <h4>{festivalevent.event}</h4>
+  <h4>{festivalevent.event }</h4>
   <p>{festivalevent.time}</p>
 </article>
 
 <style>
-  .link_card {
-    display: grid;
-  }
-  img {
-    max-width: 50%;
-    border-radius: 50%;
-  }
-
   article {
     text-align: center;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
   }
 </style>

@@ -5,22 +5,24 @@ import Menu from "../components/Menu.astro";
 import "../styles/style.css";
 ---
 
-<main>
-  <Menu />
-  <section>
-    <div>
-      <img src="/img/tegn.webp" alt="l" />
-    </div>
-    <div>
-      <h4>Sakura Festival</h4>
-      <h4>The Japanese blossom festival</h4>
-    </div>
-  </section>
-</main>
+<MainLayout>
+  <main>
+    <section>
+      <div>
+        <img src="/img/tegn.webp" alt="l" />
+      </div>
+      <div>
+        <h2>Sakura Festival</h2>
+        <h4>The Japanese blossom festival</h4>
+      </div>
+    </section>
+  </main>
+</MainLayout>
 
 <style>
   section {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
 </style>
