@@ -22,42 +22,124 @@ const secondStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.sc
 const secondStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 2 && festivalevent.dato === 2);
 const lawnStageLoerdag = alleEvents.filter((festivalevent) => festivalevent.scene === 3 && festivalevent.dato === 1);
 const lawnStageSondag = alleEvents.filter((festivalevent) => festivalevent.scene === 3 && festivalevent.dato === 2);
-
 ---
 
 <MainLayout>
-    <!-- {alleEvents.map((event) => <Card festivalevent={event} />)} -->
+  <!-- {alleEvents.map((event) => <Card festivalevent={event} />)} -->
 
   <main>
-    <div>
-      <h3>Main stage</h3>
-      <div class="main_loerdag">
-        <Container theEvents={mainStageLoerdag} />
+    <div class="baggrund">
+      <div>
+        <img src="/img2/gren.webp" alt="f" />
+      </div>
+      <div class="gren2">
+        <img src="/img2/gren2.webp" alt="f" />
+      </div>
+      <div class="gren3">
+        <img src="/img2/gren.webp" alt="f" />
       </div>
 
-      <div>
-        <Container theEvents={secondStageLoerdag} filter="Second Stage" />
-      </div>
-
-      <div>
-        <Container theEvents={lawnStageLoerdag} filter="Lawn Stage" />
+      <div class="gren4">
+        <img src="/img2/gren2.webp" alt="f" />
       </div>
     </div>
 
-    <Container theEvents={mainStageSondag} filter="Main Stage" />
-    <Container theEvents={secondStageSondag} filter="Second Stage" />
-    <Container theEvents={lawnStageSondag} filter="Lawn Stage" />
+    <div class="grid_1">
+      <h2>Line up</h2>
+      <h5>Saturday 22.04.23</h5>
+    </div>
+
+    <div>
+      <h3>Main stage</h3>
+
+      <div class="loerdag">
+        <Container theEvents={mainStageLoerdag} />
+      </div>
+
+      <h3>Second Stage</h3>
+      <div class="loerdag">
+        <Container theEvents={secondStageLoerdag} />
+      </div>
+
+      <h3>The Lawn</h3>
+      <div class="loerdag">
+        <Container theEvents={lawnStageLoerdag} />
+      </div>
+    </div>
+
+    <div class="grid_1">
+      <h5>Sunday 23.04.23</h5>
+    </div>
+
+    <div>
+      <h3>Main stage</h3>
+      <div class="loerdag">
+        <Container theEvents={mainStageSondag} />
+      </div>
+
+      <h3>Second Stage</h3>
+      <div class="loerdag">
+        <Container theEvents={secondStageSondag} />
+      </div>
+
+      <h3>The Lawn</h3>
+      <div class="loerdag">
+        <Container theEvents={lawnStageSondag} />
+      </div>
+    </div>
   </main>
 </MainLayout>
 
 <style>
-  .main_loerdag {
+  .baggrund {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    opacity: 10%;
+    gap: 40px;
+  }
+  .gren2 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .gren3 {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  .gren4 {
+    grid-column: 2;
+    grid-row: 7;
+  }
+  .grid_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .loerdag {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
+  h2 {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-bottom: 3px solid #000000;
+    padding-right: 40px;
+    padding-left: 40px;
+    grid-column: 2;
+  }
   h3 {
     position: relative;
+    text-align: left;
+    display: inline-block;
+    border-bottom: 2px solid #000000;
+    padding-right: 800px;
+  }
+  h5 {
+    grid-column: 2;
+    grid-row: 2;
     text-align: center;
   }
 </style>

@@ -7,22 +7,75 @@ import "../styles/style.css";
 
 <MainLayout>
   <main>
-    <section>
-      <div>
-        <img src="/img/tegn.webp" alt="l" />
+    <div class="tegn">
+      <img src="/img2/tegn.webp" alt="k" />
+    </div>
+
+    <div class="cirkel">
+      <div class="titel">
+        <img src="/img2/cirkel.webp" alt="d" />
       </div>
-      <div>
-        <h2>Sakura Festival</h2>
-        <h4>The Japanese blossom festival</h4>
+    </div>
+
+    <div class="titel">
+      <h2>Sakura Festival</h2>
+      <h4>The Japanese blossom festival</h4>
+    </div>
+
+    <section>
+      <div class="del2">
+        <div class="bag">
+          <img src="/img2/bagg.webp" alt="w" />
+        </div>
+        <div><p>hej</p></div>
       </div>
     </section>
   </main>
 </MainLayout>
-
 <style>
-  section {
+  main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
   }
 
+  .titel {
+    grid-column: 2;
+  }
+  .tegn {
+    position: absolute;
+    left: 65px;
+    opacity: 50%;
+  }
+
+  h2 {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-bottom: 5px solid #000000;
+    letter-spacing: 10px;
+  }
+
+  .cirkel {
+    position: absolute;
+    display: grid;
+    max-width: 40%;
+    grid-template-columns: 0.5fr 1fr;
+  }
+  img {
+    max-width: 250%;
+  }
+
+  .tegn {
+    grid-column: 1;
+  }
+
+  .del2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .bag {
+    grid-column: 1;
+    grid-row: 3;
+  }
 </style>
