@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 
   return data.map(({ enevent }) => {
     return {
-      params: { id: enevent.id },
+      params: { slug: enevent.slug },
       props: { enevent },
     };
   });

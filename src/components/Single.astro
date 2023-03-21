@@ -4,37 +4,17 @@ import Card from "./Card.astro";
 import Lineup from "../pages/lineup.astro";
 ---
 
- <!-- 
+<!-- 
 <article>
  <img src={img} /> 
   <h4>{festivalevent.event}</h4>
   <p>{festivalevent.time}</p>
   <p>{festivalevent.description}</p>
 </article> -->
-
 <section>
   <h4>{festivalevent}</h4>
 
-
-
-  {festivalevent.map((event) => <personkort 
-
-link={"/undersider/" + festivalevent.id} 
-image={`/img/${festivalevent.image}`} 
-navn={festivalevent.event} 
-dato={festivalevent.time.slice(0, 10)} 
-description={festivalevent.description}
-
-
-
-
-/>
-
-
-)
-
-
-}
+  {festivalevent.map((event) => <personkort link={"/undersider/" + festivalevent.slug} image={`/img/${festivalevent.image}`} name={festivalevent.event} time={festivalevent.time.slice(0, 10)} description={festivalevent.description} />)}
 </section>
 
 <style>
