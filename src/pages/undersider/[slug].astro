@@ -1,27 +1,31 @@
 ---
+import Container from "../../components/Container.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Lineup from "../lineup.astro";
 export async function getStaticPaths() {
-  const url = "";
+  const url = "https://nwjbtvzqimludxhozddx.supabase.co/rest/v1/sakura";
   const options = {
     headers: {
-      apikey: "",
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53amJ0dnpxaW1sdWR4aG96ZGR4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg5NTY1NjMsImV4cCI6MTk5NDUzMjU2M30.pBu6ZWcKE_Krw71zy6wwDpQdA5iwxQsjAruQOKbdIlw",
+  
     },
   };
 
   const response = await fetch(url, options);
-  const allePersoner = await response.json();
+  const festivalEvent = await response.json();
 
-  return allePersoner.map(({ person }) => {
+  return festivalEvent.map(({festivalEvent}) => {
     return {
-      params: { slug: person.slug },
-      props: { person },
+      params: { id: festivalEvent.id },
+      props: { festivalEvent },
     };
   });
 }
 
-const { person } = Astro.props;
+const { festivalEvent } = Astro.props;
 ---
 
-<layout title={person.slug}>
-  <h1>{person.navn}</h1>
-  <img src={`/thumbs/${person.billede}`} alt={"profilbillede af " + person.navn} />
-</layout>
+<MainLayout title={festivalEvent.event}>
+  <h1>{festivalEvent.navn}</h1>
+  <img src={`/img/${festivalEvent.img}`} alt={"profilbillede af " + festivalEvent.image} />
+</MainLayout>
