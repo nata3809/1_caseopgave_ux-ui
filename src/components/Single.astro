@@ -1,7 +1,6 @@
 ---
 const { festivalevent } = Astro.props;
 import Card from "./Card.astro";
-
 ---
 
 <article>
@@ -10,6 +9,11 @@ import Card from "./Card.astro";
   <p>{festivalevent.time}</p>
   <p>{festivalevent.description}</p>
 </article>
+
+<section>
+  <h2>{tro}</h2>
+  {personer.map((person) => <personkort link={"/undersider/" + person.slug} profilbillede={`/thumbs/${person.billede}`} navn={person.navn} email={person.email} dato={person.created_at.slice(0, 10)} />)}
+</section>
 
 <style>
   .article {
