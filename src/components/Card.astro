@@ -6,8 +6,10 @@ const { festivalevent, link } = Astro.props;
   <article>
     <img src={"/img/" + festivalevent.image} />
   </article>
-  <h4>{festivalevent.event}</h4>
-  <p>{festivalevent.time}</p>
+  <div class="txt">
+    <h4>{festivalevent.event}</h4>
+    <p>{festivalevent.time}</p>
+  </div>
 </a>
 
 <style>
@@ -24,5 +26,9 @@ const { festivalevent, link } = Astro.props;
 
   a {
     text-decoration: none;
+  }
+
+  .txt {
+    text-align: center;
   }
 </style>
