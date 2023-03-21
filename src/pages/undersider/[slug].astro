@@ -1,0 +1,27 @@
+---
+export async function getStaticPaths() {
+  const url = "";
+  const options = {
+    headers: {
+      apikey: "",
+    },
+  };
+
+  const response = await fetch(url, options);
+  const allePersoner = await response.json();
+
+  return allePersoner.map(({ person }) => {
+    return {
+      params: { slug: person.slug },
+      props: { person },
+    };
+  });
+}
+
+const { person } = Astro.props;
+---
+
+<layout title={person.slug}>
+  <h1>{person.navn}</h1>
+  <img src={`/thumbs/${person.billede}`} alt={"profilbillede af " + person.navn} />
+</layout>
