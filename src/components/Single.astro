@@ -1,18 +1,40 @@
 ---
 const { festivalevent } = Astro.props;
 import Card from "./Card.astro";
+import Lineup from "../pages/lineup.astro";
 ---
 
+ <!-- 
 <article>
-  <!-- <img src={img} /> -->
+ <img src={img} /> 
   <h4>{festivalevent.event}</h4>
   <p>{festivalevent.time}</p>
   <p>{festivalevent.description}</p>
-</article>
+</article> -->
 
 <section>
-  <h2>{tro}</h2>
-  {personer.map((person) => <personkort link={"/undersider/" + person.slug} profilbillede={`/thumbs/${person.billede}`} navn={person.navn} email={person.email} dato={person.created_at.slice(0, 10)} />)}
+  <h4>{festivalevent}</h4>
+
+
+
+  {festivalevent.map((event) => <personkort 
+
+link={"/undersider/" + festivalevent.id} 
+image={`/img/${festivalevent.image}`} 
+navn={festivalevent.event} 
+dato={festivalevent.time.slice(0, 10)} 
+description={festivalevent.description}
+
+
+
+
+/>
+
+
+)
+
+
+}
 </section>
 
 <style>

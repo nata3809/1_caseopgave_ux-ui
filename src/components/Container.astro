@@ -2,13 +2,12 @@
 import Card from "./Card.astro";
 import "../styles/style.css";
 
-
-const { theEvents ,filter } = Astro.props;
-console.log("THE EVENTS***** ",theEvents)
+const { theEvents, filter } = Astro.props;
+console.log("THE EVENTS***** ", theEvents);
 ---
 
 <h1>{filter}</h1>
 
-{theEvents.map((event) => <Card festivalevent={event} />)}
+{theEvents.map((evt) => <Card festivalevent={evt} link={"/undersider/" + evt.id} />)}
 
 <article></article>

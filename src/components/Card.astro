@@ -1,12 +1,14 @@
 ---
-const { festivalevent } = Astro.props;
+const { festivalevent, link } = Astro.props;
 ---
 
-<article>
-  <img src={"/img/" + festivalevent.image} />
-  <h4>{festivalevent.event }</h4>
+<a href={link}>
+  <article>
+    <img src={"/img/" + festivalevent.image} />
+  </article>
+  <h4>{festivalevent.event}</h4>
   <p>{festivalevent.time}</p>
-</article>
+</a>
 
 <style>
   article {
