@@ -12,49 +12,62 @@ import "../styles/style.css";
         <img src="/img2/tegn.webp" alt="d" />
       </div>
 
-      <div class="grid_2">
-        <img class="cirkel" src="/img2/cirkel2.svg" alt="f" />
-        <h1 class="text">SAKURA FESTIVAL</h1>
-        <p class="text2">The Japanese Cherry Blossom Festival</p>
-      </div>
-
-      <div class="grid_3">
-        <div>
-          <h3>22.04.23 - 23.04.23</h3>
+      <div class="container">
+        <img class="box" src="/img2/cirkel2.svg" alt="f" />
+        <div class="container_2">
+          <h1 class="box box_2">SAKURA FESTIVAL</h1>
+          <div class="box box_3">
+            <p class="box box_5">The Japanese Cherry Blossom Festival</p>
+            <div class="box box_4">
+              <h3>22.04.23</h3>
+              <p>-</p>
+              <h3>23.04.23</h3>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 </MainLayout>
+
 <style>
+  .container {
+    min-height: 180px;
+    display: grid;
+  }
+
+  .container_2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* .box sætter samme regel på alle bokse */
+  .box {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 3rem;
+  }
+
+  .box_4 {
+    place-self: end center;
+  }
+
+  .box_3 {
+    display: grid;
+    place-self: end;
+  }
+
+  .box_2 {
+    place-self: start;
+  }
+
+  .box_5 {
+    place-self: start end;
+  }
+
   section {
     display: grid;
     grid-template-columns: 0.7fr 1fr;
-  }
-
-  .grid_2 {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    position: relative;
-  }
-  .cirkel {
-    position: absolute;
-  }
-  .text {
-    position: absolute;
-  }
-  .text2 {
-    position: absolute;
-    top: 223px;
-    left: 65px;
-    font-size: 1.2rem;
-  }
-  .grid_3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column: 2;
-    z-index: 10;
   }
 
   h1 {
