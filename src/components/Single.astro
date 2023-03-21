@@ -14,7 +14,7 @@ import Lineup from "../pages/lineup.astro";
 <section>
   <h4>{festivalevent}</h4>
 
-  {festivalevent.map((event) => <personkort link={"/undersider/" + festivalevent.slug} image={`/img/${festivalevent.image}`} name={festivalevent.event} time={festivalevent.time.slice(0, 10)} description={festivalevent.description} />)}
+  {festivalevent.map((event) => <Card link={"/undersider/" + festivalevent.slug} image={`/img/${festivalevent.image}`} name={festivalevent.event} time={festivalevent.time.slice(0, 10)} description={festivalevent.description} />)}
 </section>
 
 <style>
