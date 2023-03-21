@@ -1,0 +1,45 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<section>
+  <div class="sec1"><img src="/img2/treefot.png" alt="d" /></div>
+
+  <div class="div1">
+    <h1>SAKURA FESTIVAL</h1>
+    <p>22.04.23-23.04.23</p>
+    <p>Lanelinie Park, Nordre Toldbod</p>
+    <p>1259 Copenhagen</p>
+  </div>
+
+  <div class="div1">
+    <h1>COUNTDOWN</h1>
+    <p>58 DAYS UNTIL</p>
+    <p>SAKURA FESTIVAL</p>
+    <p>Phone: (+45) 3345 5121 (+45) 3311 3377</p>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgba(255, 208, 227, 1);
+  }
+  .sec1 img {
+    max-width: 200px;
+    align-items: baseline;
+    justify-content: baseline;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+  .div1 {
+    text-align: center;
+  }
+  .co p {
+    font-size: 0.5rem;
+  }
+</style>

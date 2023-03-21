@@ -13,6 +13,9 @@ body {
   line-height: 1.5;
 }
 
+main {
+  overflow: hidden;
+}
 /*Teskster*/
 h1 {
   font-family: "Bodoni Moda", serif;
