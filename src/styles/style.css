@@ -36,6 +36,8 @@ h3 {
 h4 {
   font-family: "Gidugu", sans-serif;
   font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
 }
 
 h5 {
@@ -46,6 +48,7 @@ h5 {
 p {
   font-family: "Gidugu", sans-serif;
   font-size: 1rem;
+  color: black;
 }
 
 li a {
